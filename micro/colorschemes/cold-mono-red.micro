@@ -1,0 +1,34 @@
+# Base
+color-link default "#c0caf5,#1a1b26"
+color-link comment "#565f89,#1a1b26"
+
+# Identificadores normales
+color-link identifier "#c0caf5,#1a1b26"
+
+# Estructura / keywords (azul kitty)
+color-link statement "#7aa2f7,#1a1b26"
+color-link type "#7aa2f7,#1a1b26"
+color-link preproc "#7aa2f7,#1a1b26"
+
+# Strings y constantes (violeta kitty)
+color-link string "#bb9af7,#1a1b26"
+color-link constant "#bb9af7,#1a1b26"
+color-link symbol "#bb9af7,#1a1b26"
+
+# Especiales suaves (cian kitty)
+color-link special "#7dcfff,#1a1b26"
+
+# Errores y TODO (rojo)
+color-link error "#f7768e,#1a1b26"
+color-link todo "#db4b4b,#1a1b26"
+
+# UI
+color-link line-number "#565f89,#1a1b26"
+color-link current-line-number "#c0caf5,#1a1b26"
+
+color-link statusline "#c0caf5,#1f2335"
+color-link tabbar "#9aa5ce,#1f2335"
+
+# Selección y cursor
+color-link selection "#c0caf5,#24283b"
+color-link cursor "#1a1b26,#c0caf5"

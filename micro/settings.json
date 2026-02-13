@@ -1,0 +1,11 @@
+{
+  "colorscheme": "cold-mono-red",
+  "autosave": 5,
+  "softwrap": true,
+  "scrollbar": false,
+  "cursorline": true,
+  "statusline": true,
+  "ruler": true,
+  "tabsize": 4,
+  "tabstospaces": true
+}

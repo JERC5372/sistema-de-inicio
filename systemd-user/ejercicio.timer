@@ -1,0 +1,10 @@
+[Unit]
+Description=Activar modo ejercicio (fuerza y karate)
+
+[Timer]
+OnCalendar=Mon,Tue,Wed,Fri,Sat 16:30
+#OnCalendar=Wed,Sat 16:30
+Persistent=true
+
+[Install]
+WantedBy=timers.target
