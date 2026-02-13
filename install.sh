@@ -1,30 +1,61 @@
 #!/bin/bash
+set -e
 
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-echo "Creando directorios necesarios..."
-mkdir -p ~/.config/kitty
-mkdir -p ~/.config/micro
-mkdir -p ~/.config/fastfetch
-mkdir -p ~/.config/systemd/user
-mkdir -p ~/scripts
-mkdir -p ~/.config/awesome
-echo "Creando symlinks..."
+install_packages() {
+    echo "Instalando dependencias base..."
+    sudo pacman -S --needed base-devel git --noconfirm
 
-ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -sf ~/dotfiles/kitty/color.ini ~/.config/kitty/color.ini
+    echo "Actualizando sistema..."
+    yay -Syu --noconfirm
 
-ln -sf ~/dotfiles/micro/settings.json ~/.config/micro/settings.json
-ln -sf ~/dotfiles/micro/cold-mono-red.micro ~/.config/micro/cold-mono-red.micro
+    echo "Instalando programas..."
+    yay -S timeshift vivaldi qbittorrent bitwarden kitty \
+    bibata-cursor-theme flatpak inkscape zsh \
+    zsh-syntax-highlighting zsh-autosuggestions zsh-sudo \
+    wps-office ttf-wps-fonts gimp lotion micro fastfetch peazip --noconfirm
+}
 
-ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+setup_flatpak() {
+    echo "Configurando flatpak..."
+    flatpak remote-add --if-not-exists flathub \
+    https://dl.flathub.org/repo/flathub.flatpakrepo
 
-ln -sf ~/dotfiles/systemd-user/ejercicio.service ~/.config/systemd/user/ejercicio.service
+    flatpak install -y flathub org.videolan.VLC
+}
 
-ln -sf ~/dotfiles/scripts/apagar.sh ~/scripts/apagar.sh
-ln -sf ~/dotfiles/scripts/ejercicio.sh ~/scripts/ejercicio.sh
-ln -sf ~/dotfiles/scripts/inicio.sh ~/scripts/inicio.sh
-chmod +x ~/scripts/*.sh
+setup_dotfiles() {
+    echo "Creando directorios..."
+    mkdir -p ~/.config/{kitty,micro,fastfetch,systemd/user,awesome}
+    mkdir -p ~/scripts
 
-ln -sf ~/dotfiles/awesome/rc.lua ~/.config/awesome/rc.lua
+    echo "Creando symlinks..."
 
-echo "Instalación terminada."
+    ln -sf "$DOTFILES_DIR/kitty/kitty.conf" ~/.config/kitty/kitty.conf
+    ln -sf "$DOTFILES_DIR/kitty/color.ini" ~/.config/kitty/color.ini
+
+    ln -sf "$DOTFILES_DIR/micro/settings.json" ~/.config/micro/settings.json
+    ln -sf "$DOTFILES_DIR/micro/cold-mono-red.micro" ~/.config/micro/cold-mono-red.micro
+
+    ln -sf "$DOTFILES_DIR/fastfetch/config.jsonc" ~/.config/fastfetch/config.jsonc
+
+    ln -sf "$DOTFILES_DIR/systemd-user/ejercicio.service" \
+    ~/.config/systemd/user/ejercicio.service
+
+    ln -sf "$DOTFILES_DIR/scripts/apagar.sh" ~/scripts/apagar.sh
+    ln -sf "$DOTFILES_DIR/scripts/ejercicio.sh" ~/scripts/ejercicio.sh
+
+    ln -sf "$DOTFILES_DIR/awesome/rc.lua" ~/.config/awesome/rc.lua
+
+    chmod +x ~/scripts/*.sh
+}
+
+main() {
+    install_packages
+    setup_flatpak
+    setup_dotfiles
+    echo "Sistema configurado correctamente."
+}
+
+main
