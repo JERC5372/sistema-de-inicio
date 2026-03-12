@@ -10,8 +10,8 @@ yay -Syu --needed \
 timeshift vivaldi cohesion-git qbittorrent bitwarden \
 kitty bibata-cursor-theme flatpak inkscape zsh \
 zsh-syntax-highlighting zsh-autosuggestions zsh-sudo \
-wps-office ttf-wps-fonts gimp lotion micro fastfetch \
-peazip stow lsd bat --noconfirm
+gimp micro fastfetch peazip stow lsd bat --noconfirm
+
 
 echo "--- 2. Configurando Entorno ZSH (Oh My Zsh & P10k) ---"
 
