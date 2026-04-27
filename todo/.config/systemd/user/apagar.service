@@ -1,0 +1,6 @@
+[Unit]
+Description=Apagar PC con aviso
+
+[Service]
+Type=oneshot
+ExecStart=/home/justin/scripts/apagar.sh

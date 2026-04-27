@@ -1,0 +1,6 @@
+[Unit]
+Description=Modo ejercicio
+
+[Service]
+Type=oneshot
+ExecStart=/home/justin/scripts/ejercicio.sh

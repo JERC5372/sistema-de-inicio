@@ -1,0 +1,4 @@
+cat > ~/sistema-de-inicio/todo/.config/spicetify/.gitignore << 'EOF'
+Backup/
+*.log
+EOF

@@ -1,0 +1,10 @@
+[Unit]
+Description=Apagar PC
+
+[Timer]
+OnCalendar=Mon..Thu,Sun 22:25
+OnCalendar=Fri,Sat 22:55
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
