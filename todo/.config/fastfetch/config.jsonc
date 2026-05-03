@@ -50,7 +50,8 @@
         },
         {
             "type": "os",
-            "key": "│ {icon}{$2}{$1}"
+            "key": "│ {icon}{$2}{$1}",
+            "format" :"{2} {9}" //pinche nombre largo que da fedora alv
         },
         {
             "type": "kernel",
