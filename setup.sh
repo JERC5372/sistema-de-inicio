@@ -8,7 +8,7 @@ echo "--- 1. Actualizando sistema e instalando paquetes de Repo y AUR ---"
 yay -Syu --needed \
 linux-zen linux-zen-headers zram-generator earlyroom \
 timeshift vivaldi kitty qbittorrent bitwarden github-cli lazygit \
-cohesion-git gimp flatpak inkscape peazip tree spotify spicetify-cli \
+cohesion-git gimp flatpak inkscape peazip tree  \
 wmctrl micro xclip fastfetch stow lsd bat zoxide unzip \
 zsh zsh-syntax-highlighting zsh-autosuggestions zsh-sudo zsh-autopair \
 bibata-cursor-theme ttf-firacode-nerd inter-font  --noconfirm
@@ -55,36 +55,6 @@ else
     echo "ERROR: No se encontró la carpeta $DOTFILES_DIR"
     exit 1
 fi
-
-echo "--- 4.5 Configurando Spicetify ---"
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-spicetify backup apply
-
-echo "--- 5. Activando Servicios de Usuario (Systemd) ---"
-# Esto activa los .timer que tienes en tu carpeta de dotfiles
-systemctl --user daemon-reload
-systemctl --user enable --now apagar.timer ejercicio.timer
-echo "--- 5.5 Activando servicios adicionales (Cronie & EarlyOOM) ---"
-sudo systemctl enable --now cronie
-sudo systemctl enable --now earlyoom
-
-echo "--- 6. Activando Kernel-zen y zram ---"
-
-#activar kernel-zen
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-#activar y configurar zram
-echo "--- Configurando zram ---"
-sudo bash -c 'cat <<EOF > /etc/systemd/zram-generator.conf
-[zram0]
-zram-size = ram / 2
-compression-algorithm = zstd
-EOF'
-
-# Activar sin reiniciar
-sudo systemctl daemon-reload
-sudo systemctl start /dev/zram0
 
 echo "--- 7. Automatizando Personalización de Root ---"
 
