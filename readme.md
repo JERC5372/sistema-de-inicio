@@ -29,3 +29,10 @@ sistema-de-incio
 gh auth login
 
 > Creo los scripts y timer para apagar y para el ejercicio
+
+Pasos para esta webada de instalación
+1.- quitar firefox
+2.- poner los rpm fusion (nombre de mierda)
+3.- poner los programas
+4.- hacer un stow todo
+fin

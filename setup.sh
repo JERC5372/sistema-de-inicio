@@ -31,9 +31,6 @@ if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 fi
 
-echo "--- 3. Configurando Repositorios Externos (Flatpak) ---"
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.videolan.VLC -y
 
 echo "--- 4. Aplicando Dotfiles con GNU Stow ---"
 
