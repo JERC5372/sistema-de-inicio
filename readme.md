@@ -1,6 +1,9 @@
 Estructura de los dotfiles:
 
 sistema-de-incio
+.
+├── .directory
+├── .gitignore
 ├── readme.md
 ├── setup.sh
 └── todo
@@ -19,7 +22,6 @@ sistema-de-incio
     │   │   │   └── cold-mono-red.micro
     │   │   └── settings.json
     │   ├── spicetify
-    │   │   ├── .gitignore
     │   │   ├── config-xpui.ini
     │   │   ├── CustomApps
     │   │   │   └── marketplace
@@ -50,5 +52,7 @@ sistema-de-incio
     │   ├── apagar.sh
     │   └── ejercicio.sh
     └── .zshrc
-
+    
 > Pon tus cosas en github-cli
+
+> investiga los oh-my-zsh de los plugins
