@@ -6,12 +6,12 @@ set -e
 echo "--- 1. Actualizando sistema e instalando paquetes de Repo y AUR ---"
 
 yay -Syu --needed \
-linux-zen linux-zen-headers zram-generator earlyroom \
-timeshift vivaldi kitty qbittorrent bitwarden github-cli lazygit \
-cohesion-git gimp flatpak inkscape peazip tree spotify spicetify-cli \
+linux-zen linux-zen-headers zram-generator \
+timeshift vivaldi kitty qbittorrent bitwarden github-cli \
+flatpak inkscape tree \
 wmctrl micro xclip fastfetch stow lsd bat zoxide unzip \
-zsh zsh-syntax-highlighting zsh-autosuggestions zsh-sudo zsh-autopair \
-bibata-cursor-theme ttf-firacode-nerd inter-font  --noconfirm
+zsh zsh-syntax-highlighting zsh-autosuggestions zsh-autopair \
+bibata-cursor-theme-bin ttf-firacode-nerd inter-font  --noconfirm
 
 
 echo "--- 2. Configurando Entorno ZSH (Oh My Zsh & P10k) ---"
@@ -31,9 +31,9 @@ if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 fi
 
-echo "--- 3. Configurando Repositorios Externos (Flatpak) ---"
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.videolan.VLC -y
+# echo "--- 3. Configurando Repositorios Externos (Flatpak) ---"
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub org.videolan.VLC -y
 
 echo "--- 4. Aplicando Dotfiles con GNU Stow ---"
 
@@ -56,18 +56,13 @@ else
     exit 1
 fi
 
-echo "--- 4.5 Configurando Spicetify ---"
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-spicetify backup apply
-
 echo "--- 5. Activando Servicios de Usuario (Systemd) ---"
-# Esto activa los .timer que tienes en tu carpeta de dotfiles
-systemctl --user daemon-reload
-systemctl --user enable --now apagar.timer ejercicio.timer
+#  Esto activa los .timer que tienes en tu carpeta de dotfiles
+# systemctl --user daemon-reload
+# systemctl --user enable --now apagar.timer ejercicio.timer
 echo "--- 5.5 Activando servicios adicionales (Cronie & EarlyOOM) ---"
 sudo systemctl enable --now cronie
-sudo systemctl enable --now earlyoom
+# sudo systemctl enable --now earlyoom
 
 echo "--- 6. Activando Kernel-zen y zram ---"
 
