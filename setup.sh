@@ -8,7 +8,7 @@ echo "--- 1. Actualizando sistema e instalando paquetes de Repo y AUR ---"
 yay -Syu --needed \
 linux-zen linux-zen-headers zram-generator \
 timeshift vivaldi kitty qbittorrent bitwarden github-cli \
-flatpak inkscape tree \
+inkscape krita tree \
 wmctrl micro xclip fastfetch stow lsd bat zoxide unzip \
 zsh zsh-syntax-highlighting zsh-autosuggestions zsh-autopair \
 bibata-cursor-theme-bin ttf-firacode-nerd inter-font  --noconfirm
@@ -31,11 +31,8 @@ if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 fi
 
-# echo "--- 3. Configurando Repositorios Externos (Flatpak) ---"
-# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-# flatpak install flathub org.videolan.VLC -y
 
-echo "--- 4. Aplicando Dotfiles con GNU Stow ---"
+echo "--- 3. Aplicando Dotfiles con GNU Stow ---"
 
 # Entrar a la carpeta de tus dotfiles
 DOTFILES_DIR="$HOME/sistema-de-inicio"
@@ -62,7 +59,6 @@ echo "--- 5. Activando Servicios de Usuario (Systemd) ---"
 # systemctl --user enable --now apagar.timer ejercicio.timer
 echo "--- 5.5 Activando servicios adicionales (Cronie & EarlyOOM) ---"
 sudo systemctl enable --now cronie
-# sudo systemctl enable --now earlyoom
 
 echo "--- 6. Activando Kernel-zen y zram ---"
 
