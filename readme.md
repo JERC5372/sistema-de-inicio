@@ -21,19 +21,6 @@ sistema-de-incio
     │   │   ├── colorschemes
     │   │   │   └── cold-mono-red.micro
     │   │   └── settings.json
-    │   ├── spicetify
-    │   │   ├── config-xpui.ini
-    │   │   ├── CustomApps
-    │   │   │   └── marketplace
-    │   │   │       ├── extension.js
-    │   │   │       ├── index.js
-    │   │   │       ├── manifest.json
-    │   │   │       ├── README.md
-    │   │   │       └── style.css
-    │   │   ├── Extensions
-    │   │   └── Themes
-    │   │       └── marketplace
-    │   │           └── color.ini
     │   └── systemd
     │       └── user
     │           ├── apagar.service
