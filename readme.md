@@ -40,6 +40,4 @@ sistema-de-incio
     │   └── ejercicio.sh
     └── .zshrc
     
-> Pon tus cosas en github-cli
-
-> investiga los oh-my-zsh de los plugins
+> Pon tus cosas en github-cli con "gh auth login"

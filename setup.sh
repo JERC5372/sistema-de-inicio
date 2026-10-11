@@ -7,8 +7,8 @@ echo "--- 1. Actualizando sistema e instalando paquetes de Repo y AUR ---"
 
 yay -Syu --needed \
 linux-zen linux-zen-headers zram-generator \
-timeshift vivaldi kitty qbittorrent bitwarden github-cli \
-inkscape krita tree \
+timeshift vivaldi zen-browser-bin kitty qbittorrent bitwarden github-cli \
+tree \
 wmctrl micro xclip fastfetch stow lsd bat zoxide unzip \
 zsh zsh-syntax-highlighting zsh-autosuggestions zsh-autopair \
 bibata-cursor-theme-bin ttf-firacode-nerd inter-font  --noconfirm
@@ -53,10 +53,7 @@ else
     exit 1
 fi
 
-echo "--- 5. Activando Servicios de Usuario (Systemd) ---"
-#  Esto activa los .timer que tienes en tu carpeta de dotfiles
-# systemctl --user daemon-reload
-# systemctl --user enable --now apagar.timer ejercicio.timer
+
 echo "--- 5.5 Activando servicios adicionales (Cronie & EarlyOOM) ---"
 sudo systemctl enable --now cronie
 
@@ -98,8 +95,6 @@ sudo ln -sf "$DOTFILES_DIR/todo/.p10k.zsh" /root/.p10k.zsh
 
 echo "--- 8. Configuración Final de GitHub ---"
 if ! gh auth status &>/dev/null; then
-    echo "Sugerencia: Ejecuta 'gh auth login' para vincular tu cuenta de GitHub."
-    echo "Esto evitará que tengas que usar tokens o contraseñas manualmente."
 fi
 
 echo "-------------------------------------------------------"
