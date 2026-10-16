@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Estructura"
             }
+          },
+          {
+            "id": "e89a0049712ebe0c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Rutina.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Rutina"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,12 +203,13 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "9d021c77b33588fe",
+  "active": "e89a0049712ebe0c",
   "lastOpenFiles": [
-    "No se como se llama.md",
-    "Objetivos.md",
-    "Rutina.md",
     "Estructura.md",
-    "Ejercicios.md"
+    "Objetivos.md",
+    "Ejercicios.md",
+    "Para ia's.md",
+    "Rutina.md",
+    "No se como se llama.md"
   ]
 }

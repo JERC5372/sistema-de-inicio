@@ -1,8 +1,8 @@
 # Semanal
 
-| Lunes | Martes | Miercoles | Jueves | Viernes  | Sabado | Domingo |
-| ----- | ------ | --------- | ------ | -------- | ------ | ------- |
-| Torso | Pierna | ~         | ~      | Fullbody | ~      | ~       |
+| Lunes | Martes | Miercoles | Jueves | Viernes  | Sabado  | Domingo |
+| ----- | ------ | --------- | ------ | -------- | ------- | ------- |
+| Torso | Pierna | Marcial   | ~      | Fullbody | Marcial | ~       |
 
 ---
 # Diaria
